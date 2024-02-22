@@ -1,7 +1,5 @@
 package Server;
 
-import Server.HttpServer;
-
 public class MainApplication {
     // Домашнее задание:
     // - Добавить логирование

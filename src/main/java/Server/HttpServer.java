@@ -7,7 +7,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class HttpServer {
-
     private int port;
     private Dispatcher dispatcher;
     private ExecutorService threadPool;

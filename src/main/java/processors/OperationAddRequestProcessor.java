@@ -6,8 +6,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 
-
-
 public class OperationAddRequestProcessor implements RequestProcessor {
     @Override
     public void execute(HttpRequest httpRequest, OutputStream output) throws IOException {
