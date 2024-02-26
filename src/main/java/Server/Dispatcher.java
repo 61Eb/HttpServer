@@ -9,7 +9,6 @@ import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-
 public class Dispatcher {
 
     private Map<String, RequestProcessor> router;
@@ -17,8 +16,8 @@ public class Dispatcher {
 
     public Dispatcher() {
         this.router = new HashMap<>();
-        this.router.put("/add", new OperationAddRequestProcessor());         // /GET /add => OperationAddRequestProcessor
-        this.router.put("/hello_world", new HelloWorldRequestProcessor());   // /GET /hello_world => HelloWorldRequestProcessor
+        this.router.put("/add", new OperationAddRequestProcessor());
+        this.router.put("/hello_world", new HelloWorldRequestProcessor());
         this.unknownRequestProcessor = new UnknownRequestProcessor();
     }
 
