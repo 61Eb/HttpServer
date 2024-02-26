@@ -2,7 +2,6 @@ package Server;
 
 import java.util.HashMap;
 import java.util.Map;
-
 public class HttpRequest {
 
     private String rawRequest;
@@ -53,7 +52,3 @@ public class HttpRequest {
     }
 }
 
-// http://localhost:8189/add
-// http://localhost:8189/subtract
-// http://localhost:8189/divide
-// http://localhost:8189/multiply
