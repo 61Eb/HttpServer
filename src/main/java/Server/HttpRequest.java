@@ -5,10 +5,11 @@ import java.util.Map;
 
 public class HttpRequest {
 
+    private int statusCode = 200;
     private String rawRequest;
     private String uri;
-    private HttpMethod method;
     private Map<String, String> parameters;
+    private HttpMethod method;
 
     public String getUri() {
         return uri;
@@ -22,6 +23,17 @@ public class HttpRequest {
         this.rawRequest = rawRequest;
         parseRequestLine();
     }
+
+    public void setStatusCode(int statusCode) {
+        this.statusCode = statusCode;
+    }
+
+    public int getStatusCode() {
+        return statusCode;
+    }
+
+
+
 
     private void parseRequestLine() {
         int startIndex = rawRequest.indexOf(' ');
@@ -52,8 +64,3 @@ public class HttpRequest {
         System.out.println("HTTP METHOD: " + method);
     }
 }
-
-// http://localhost:8189/add
-// http://localhost:8189/subtract
-// http://localhost:8189/divide
-// http://localhost:8189/multiply
