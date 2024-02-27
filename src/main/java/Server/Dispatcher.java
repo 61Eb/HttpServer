@@ -1,9 +1,6 @@
 package Server;
 
-import processors.HelloWorldRequestProcessor;
-import processors.OperationAddRequestProcessor;
-import processors.RequestProcessor;
-import processors.UnknownRequestProcessor;
+import processors.*;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.HashMap;
@@ -17,8 +14,9 @@ public class Dispatcher {
 
     public Dispatcher() {
         this.router = new HashMap<>();
-        this.router.put("/add", new OperationAddRequestProcessor());         // /GET /add => OperationAddRequestProcessor
-        this.router.put("/hello_world", new HelloWorldRequestProcessor());   // /GET /hello_world => HelloWorldRequestProcessor
+        this.router.put("/json", new JsonRequestProcessor());
+        this.router.put("GET /add", new OperationAddRequestProcessor());
+        this.router.put("/hello_world", new HelloWorldRequestProcessor());
         this.unknownRequestProcessor = new UnknownRequestProcessor();
     }
 
@@ -30,5 +28,6 @@ public class Dispatcher {
         RequestProcessor requestProcessor = router.get(httpRequest.getUri());
         requestProcessor.execute(httpRequest, output);
     }
+
 
 }

@@ -45,6 +45,7 @@ public class HttpServer {
             int n = socket.getInputStream().read(buffer);
             String rawRequest = new String(buffer, 0, n);
             HttpRequest httpRequest = new HttpRequest(rawRequest);
+            httpRequest.setStatusCode(404);
             dispatcher.execute(httpRequest, socket.getOutputStream());
 
             System.out.println("Соединение с клиентом успешно обработано.");
